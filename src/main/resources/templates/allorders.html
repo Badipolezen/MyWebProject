@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<th:block th:include="~{fragments/head}"/>
+<!--&lt;!&ndash;</th:block>&ndash;&gt;-->
+
+<H1> Order All</H1>
+
+<body>
+<th:block th:include="~{fragments/header}"/>
+
+
+<main class="container">
+
+
+    <hr class="hr-3"/>
+    <table class="table bg-blur">
+        <thead>
+
+
+
+        <tr>
+            <th scope="col" class="font-weight-bold">Name</th>
+            <th scope="col">№</th>
+            <th scope="col">Poluc</th>
+            <th scope="col">Strength</th>
+            <th scope="col">Attack</th>
+            <th scope="col">Defence</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody id="items-table">
+
+
+        </tbody>
+    </table>
+</main>
+<!--<th:block th:include="~{fragments/footer}"/>-->
+<!--<th:block th:include="~{fragments/loader}"/>-->
+
+
+<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"-->
+<!--        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="-->
+<!--        crossorigin="anonymous"></script>-->
+
+
+<script src="/js/offers.js"></script>
+</body>
+</html>

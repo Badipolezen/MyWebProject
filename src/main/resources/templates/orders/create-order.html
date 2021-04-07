@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <th:block th:include="~{fragments/head}">
+
+        </th:block>
+        <th:block th:include="~{fragments/header}">
+
+        </th:block>
+        <title>PSLTD</title>
+
+
+<body>
+
+
+
+    <main>
+        <h1 class="text-center">Create Order</h1>
+        <hr class="hr-3" />
+        <form class="mx-auto w-25" action="/orders/create" method="post">
+
+
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="barcode" class="h4 mb-2 text-white">Barcode</label>
+                </div>
+                <input type="text" class="form-control" id="barcode" name="barcode" />
+            </div>
+<!--            <div class="form-group">-->
+<!--                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">-->
+<!--                    <label for="destination" class="h4 mb-2 text-white">Office-destination</label>-->
+<!--                </div>-->
+<!--                <input type="text" class="form-control" id="destination" name="destination" />-->
+<!--            </div>-->
+            <div class="form-group">
+            <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                <label  class="h4 mb-2 text-white" th:align="left">Destination</label>
+                <select name="destination" >
+                    <option th:each="destination : ${T(lastproject.lastdelivery.data.Destination).values()}"
+                            th:value="${destination}" th:text="${destination}"></option>
+                </select>
+            </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="sendNumber" class="h4 mb-2 text-white">Sender's phone</label>
+                </div>
+                <input type="text" class="form-control" id="sendNumber" name="sendNumber" />
+            </div>
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="receiveNumber" class="h4 mb-2">Recipient's Phone</label>
+                </div>
+                <input type="text" class="form-control" id="receiveNumber" name="receiveNumber" />
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="recipientName" class="h4 mb-2 text-white">Recipient's Name</label>
+                </div>
+                <input type="text" class="form-control" id="recipientName" name="recipientName" />
+            </div>
+<!--            <div class="form-group">-->
+<!--                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">-->
+<!--                    <label for="location" class="h4 mb-2 text-white">location</label>-->
+<!--                </div>-->
+<!--                <input type="text" class="form-control" id="location" name="location"  />-->
+<!--            </div>-->
+            <div class="form-group">
+
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label  class="h4 mb-2 text-white" th:align="left">Location</label>
+                    <select name="location" >
+                    <option th:each="location : ${T(lastproject.lastdelivery.data.Location).values()}"
+                        th:value="${location}" th:text="${location}"></option>
+                           </select>
+                </div>
+
+                </div>
+
+            <div class="button-holder d-flex justify-content-center">
+                <button class="btn btn-info text-white mb-3" type="submit">Create Ordrer</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+<footer>
+
+</footer>
+
+</html>

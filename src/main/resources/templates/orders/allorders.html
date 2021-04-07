@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<!--      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<th:block th:include="~{fragments/head}">
+
+</th:block>
+<th:block th:include="~{fragments/header}">
+</th:block>
+<link rel="stylesheet" href="/css/orders.css">
+<body>
+
+
+<main class="container">
+
+    <hr class="hr-3"/>
+    <table class="table bg-blur">
+        <thead>
+
+  <tr>
+            <th scope="col" class="font-weight-bold">Barcode</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Sender number</th>
+            <th scope="col">Receiving number</th>
+            <th scope="col">location</th>
+            <th scope="col">recipientName</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody id="items-table">
+
+
+        </tbody>
+    </table>
+</main>
+<!--<th:block th:include="~{fragments/footer}"/>-->
+<!--<th:block th:include="~{fragments/loader}"/>-->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"></script>
+
+
+<script src="/js/offers.js">
+
+
+</script>
+</body>
+<th:block th:include="~{fragments/footer}"/>
+</html>

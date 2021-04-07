@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <th:block th:include="~{fragments/head}"/>
+
+    </th:block>
+
+        <title>PSLTD</title>
+
+
+<header>
+    <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark ">
+        <a class="navbar-brand text-white h4" href="/profile">Profile</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <ul class="navbar-nav row">
+
+                <li class="nav-item mr-2">
+                    <a class="nav-link text-white active h5" href="/orders/all">All Orders</a>
+                </li>
+                <li class="nav-item mr-2">
+                    <a class="nav-link text-white active h5" href="/orders/create">Create order</a>
+                </li>
+                <li class="nav-item mr-2">
+                    <a class="nav-link text-white active h5" href="/orders/details">Oredr detail</a>
+                </li>
+                <li class="nav-item mr-2">
+                    <a class="nav-link text-white active h5" href="/orders/update">Forward Order</a>
+                </li>
+
+                <li class="nav-item mr-2">
+                    <a class="nav-link text-white active h5" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+
+
+    <main>
+        <h1 class="text-center">Finish Order</h1>
+        <hr class="hr-3" />
+        <form class="mx-auto w-15" th:action="@{/orders/finish}" method="post">
+
+
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="destination" class="h4 mb-2 text-white">Office-destination</label>
+                </div>
+                <input type="number" class="form-control" id="destination" name="destination" />
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="sendersPhone" class="h4 mb-2 text-white">Sender's phone</label>
+                </div>
+                <input type="text" class="form-control" id="sendersPhone" name="sendersPhone" />
+            </div>
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="recipientsPhone" class="h4 mb-2">Recipient's Phone</label>
+                </div>
+                <input type="number" class="form-control" id="recipientsPhone" name="recipientsPhone" />
+            </div>
+          
+            
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="recipientName" class="h4 mb-2 text-white">Recipient's Name</label>
+                </div>
+                <input type="text" class="form-control" id="recipientName" name="recipientName" />
+            </div>
+
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="password" class="h4 mb-2">Password</label>
+                </div>
+                <input type="password" class="form-control" id="password" name="password" />
+            </div>
+            <div class="form-group">
+                <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
+                    <label for="confirmPassword" class="h4 mb-2">Confirm Password</label>
+                </div>
+                <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" />
+            </div>
+            <div class="button-holder d-flex justify-content-center">
+                <button class="btn btn-info text-white mb-3" type="submit">Create Ordrer</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+<footer>
+
+</footer>
+
+</html>
