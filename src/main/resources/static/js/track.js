@@ -4,7 +4,7 @@ const URLS = {
 
 };
 
-
+let timestamp = new Date().getTime();
 const toString = ({barcode,destination,location,recipientName,updateDate}) => {
     let columns = `
     <td >${barcode}</td>
@@ -23,21 +23,21 @@ const toString = ({barcode,destination,location,recipientName,updateDate}) => {
     //     </form>
     // </td>`
 
-    if(location!==destination){
-        columns+=  `
-        <td>
-Update date
-    </td>`}
-    else{
+    // if(location!==destination){
+    //     columns+=  `
+    //     <td>
+    //
+    // </td>`}
+    // else{
         columns+=
 
             ` <td>
 <!--            <form class="buy-item-form" action="/orders/delete/${barcode}" method="post">-->
-             <a href="/orders/delete/${barcode}"> ${updateDate}</a>
+<!--             <a href="/orders/delete/${barcode}"> ${updateDate}</a>-->
 <!--                <button class="btn btn-info">Arrived</button>-->
 <!--            </form>-->
         </td>`
-    }
+    // }
 
 
 
@@ -67,12 +67,6 @@ fetch(URLS.tracks)
         $('#items-table').html(result);
         // loader.hide();
     });
-
-
-
-
-
-
 
 
 

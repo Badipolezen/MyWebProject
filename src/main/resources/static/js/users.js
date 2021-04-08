@@ -5,7 +5,7 @@ const URLS = {
 };
 
 
-const toString = ({username,firstName,lastName,officeName,authorities}) => {
+const toString = ({username,firstName,lastName,officeName,authorities[0]}) => {
     let columns = `
     <td ></td>
      <td>${username}</td>

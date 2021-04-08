@@ -1,7 +1,6 @@
 package lastproject.lastdelivery.web.view.controlers;
 
 
-import lastproject.lastdelivery.data.Location;
 import lastproject.lastdelivery.data.Order;
 import lastproject.lastdelivery.repositories.OrdersRepositories;
 import lastproject.lastdelivery.services.models.OrderServiceModel;
@@ -49,25 +48,12 @@ public class OrderController {
     public String createOrder(){
         return "orders/create-order";
     }
-//    @GetMapping("/create")
-//    public ModelAndView createOrder(@ModelAttribute ModelAndView modelAndView ){
-//        modelAndView.setViewName("orders/create-order.html");
-//        modelAndView.addObject()
-//        return modelAndView;
-//
-//    }
-
-
 
     @PostMapping("/create")
     public String orderConfirm(@ModelAttribute OrderCreateModel createModel) throws Exception {
 
                 OrderServiceModel serviceModel=this.modelMapper.map(createModel, OrderServiceModel.class);
-
-                serviceModel.setDestination(createModel.getDestination().toUpperCase());
-                serviceModel.setLocation(createModel.getLocation().toUpperCase());//
                 this.orderService.register(serviceModel);
-
 
                 return "redirect:/orders/all";}
 
@@ -75,6 +61,7 @@ public class OrderController {
     @GetMapping("/delete/{barcode}")
     public ModelAndView deleteOrder(@PathVariable String barcode , ModelAndView modelAndView){
             Order order=this.orderService.findOrderByBarcode(barcode);
+
 
         modelAndView.addObject("barcode",order.getBarcode());
         modelAndView.setViewName("orders/delete-order.html");
@@ -101,7 +88,6 @@ public class OrderController {
         modelAndView.addObject("sendNumber",order.getSendNumber());
         modelAndView.addObject("receiveNumber",order.getReceiveNumber());
         modelAndView.addObject("recipientName",order.getRecipientName());
-//        modelAndView.addObject("location",order.getLocation());
         modelAndView.addObject("location",order.getLocation());
         modelAndView.setViewName("orders/update-order.html");
 
@@ -149,13 +135,5 @@ public class OrderController {
 //        return "orders/order-details";
 //    }
 
-
-
-//    @PostMapping(value = "/create")
-//    public String createLocation(Location location) {
-//        orderService.(location);
-//
-//        return "redirect:/create";
-//    }
 }
 

@@ -1,7 +1,6 @@
 package lastproject.lastdelivery.web.view.models;
 
 
-import lastproject.lastdelivery.data.Location;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

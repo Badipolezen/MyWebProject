@@ -16,17 +16,16 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 public class Track extends BaseEntity{
-    @Column
+    @Column( nullable = false)
     private String barcode;
-    @Column
     private String destination;
-    @Column(nullable = false)
+
     private String sendNumber;
-    @Column( nullable = false)
+
     private String receiveNumber;
-    @Column( nullable = false)
+
     private String location;
-    @Column( nullable = false)
+
     private String recipientName;
 
     @CreationTimestamp

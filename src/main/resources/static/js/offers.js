@@ -3,7 +3,7 @@ const URLS = {
     offers: '/api/all',
 
 };
-const toString = ({id,barcode,destination,sendNumber,receiveNumber,location,recipientName}) => {
+const toString = ({barcode,destination,sendNumber,receiveNumber,location,recipientName}) => {
     let columns = `
     <td>${barcode}</td>
     <td>${destination}</td>

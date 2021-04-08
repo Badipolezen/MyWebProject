@@ -1,5 +1,6 @@
 package lastproject.lastdelivery.data;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,12 +25,11 @@ public class Order extends BaseEntity {
         private String sendNumber;
     @Column( nullable = false)
         private String receiveNumber;
+    @Column( nullable = false)
 
-@Column
-@Enumerated(EnumType.STRING)
-        private Location location;
-
+        private String location;
     @Column( nullable = false,updatable = true)
         private String recipientName;
 
-}
+
+    }

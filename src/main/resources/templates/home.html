@@ -6,12 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
 <th:block th:include="~{fragments/head}"/>
 
 <!--&lt;!&ndash;</th:block>&ndash;&gt;-->
 <th:block th:include="~{fragments/header}"/>
 
-<H1 align="center"> Welcome in Perfect Systems page</H1>
+<H1 align="center" th:text="${principal.getAuthorities()}"> Welcome in Perfect Systems page</H1>
 
 <body>
 

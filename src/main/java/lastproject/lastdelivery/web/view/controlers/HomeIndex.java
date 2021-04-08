@@ -14,11 +14,11 @@ public class HomeIndex {
     }
 
 
-    @GetMapping("/home")
-        public String home(){
-        return "home";
-    }
-
+//    @GetMapping("/home")
+//        public String home(){
+//        return "home";
+//    }
+//
 
     @GetMapping("/koko")
 
