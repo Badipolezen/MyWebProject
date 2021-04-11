@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class RegisterUserModel {
-    private String officeName;
+//    private String officeName;
     private String username;
     private String firstName;
     private String lastName;

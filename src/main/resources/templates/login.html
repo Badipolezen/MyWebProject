@@ -8,22 +8,23 @@
 
 <th:block th:include="~{fragments/head}"/>
 
-</th:block>
+<!--<th:block th:include="~{fragments/head}"/>-->
 
-<title>Login</title>
-<header>
+
+
     <header>
         <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark ">
-            <a class="navbar-brand text-white h4" href="/">Пратки</a>
+            <a class="navbar-brand text-white h4" href="/">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <div class="collapse navbar-collapse d-flex justify-content-end">
+<!--            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">-->
                 <ul class="navbar-nav row">
-                    <li class="nav-item col-md-4">
-                        <a class="nav-link text-white active h5" href="/">Home</a>
-                    </li>
+<!--                    <li class="nav-item col-md-4">-->
+<!--                        <a class="nav-link text-white active h5" href="/orders/track">Tracking</a>-->
+<!--                    </li>-->
                     <li class="nav-item col-md-4">
                         <a class="nav-link text-white active h5" href="/login">Login</a>
                     </li>
@@ -34,18 +35,14 @@
             </div>
         </nav>
     </header>
-</header>
+<H1 align="center"> Login</H1>
+<body>
 <main>
-    <h1 class="text-center">Login</h1>
-    <hr class="hr-3" />
-    <form class="mx-auto w-15" th:action="@{/login}" th:method="post">
 
-<!--        <div class="form-group">-->
-<!--            <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">-->
-<!--                <label for="officeName" class="h4 mb-2">Office №</label>-->
-<!--            </div>-->
-<!--            <input type="text" class="form-control" id="officeName" name="officeName" />-->
-<!--        </div>-->
+<!--    <h1 class="text-center">Login</h1>-->
+    <hr class="hr-3" />
+    <form class="mx-auto w-25" th:action="@{/login}" th:method="post">
+
         <div class="form-group">
             <div class="label-holder text-white bg-dark textCol d-flex justify-content-center">
                 <label for="username" class="h4 mb-2 text-white">Username</label>

@@ -16,7 +16,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class UsersServiceModel {
 
-    private String officeName;
+
     private String username;
     private String firstName;
     private String lastName;

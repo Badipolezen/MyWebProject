@@ -12,8 +12,6 @@ import java.util.Set;
 @NoArgsConstructor
 public class RegisterUserServiceModel {
 
-    private String officeName;
-
     private String username;
 
     private String firstName;

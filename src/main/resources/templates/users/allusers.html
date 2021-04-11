@@ -5,18 +5,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="refresh" content="">
 
 <th:block th:include="~{fragments/head}"/>
 <!--&lt;!&ndash;</th:block>&ndash;&gt;-->
 
-<H1> Order All</H1>
+
 
 <body>
 <th:block th:include="~{fragments/header}"/>
 
 
-<main class="container">
+<div sec:authorize="hasAuthority('ADMIN')">
 
+    <title>All users</title>
+<main class="container">
+    <div sec:authorize="hasAuthority('ADMIN')">
 
     <hr class="hr-3"/>
     <table class="table bg-blur">
@@ -26,10 +30,10 @@
 
         <tr>
             <th scope="col" class="font-weight-bold">Name</th>
-            <th scope="col">ID</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
-            <th scope="col">Role</th>
+            <th scope="col">Role </th>
+
                        <th scope="col"></th>
         </tr>
         </thead>
@@ -38,10 +42,20 @@
 
         </tbody>
     </table>
+        </div>
 </main>
+
 <!--<th:block th:include="~{fragments/footer}"/>-->
 <!--<th:block th:include="~{fragments/loader}"/>-->
+<script>
+    let disab=document.querySelectorAll('#role > form > button')[0];
 
+    let content=disab.innerHTML;
+    console.log(content);
+
+    disab.style.display='none';
+
+</script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="

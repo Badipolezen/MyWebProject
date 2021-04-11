@@ -9,47 +9,21 @@
 
 <th:block th:include="~{fragments/head}"/>
 
-<!--&lt;!&ndash;</th:block>&ndash;&gt;-->
+
+
+
 <th:block th:include="~{fragments/header}"/>
 
-<H1 align="center" th:text="${principal.getAuthorities()}"> Welcome in Perfect Systems page</H1>
+
+<H1 align="center" th:text="' Welcome in Perfect Systems page ' + ${#authentication.getName()} + '!'"></h1>
 
 <body>
 
-<!--<header>-->
-<!--    <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark ">-->
-<!--        <a class="navbar-brand text-white h4" href="/"></a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"-->
-<!--                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">-->
-<!--            <ul class="navbar-nav row">-->
-
-<!--                <li class="nav-item mr-2">-->
-<!--                    <a class="nav-link text-white active h5" href="/login">Login</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item mr-2">-->
-<!--                    <a class="nav-link text-white active h5" href="/register">Register</a>-->
-<!--                </li>-->
-
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </nav>-->
-<!--</header>-->
 
 <main class="container">
 
+
 </main>
-<!--<th:block th:include="~{fragments/footer}"/>-->
-<!--<th:block th:include="~{fragments/loader}"/>-->
 
-
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"-->
-<!--        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="-->
-<!--        crossorigin="anonymous"></script>-->
-
-
-<!--<script src="/js/offers.js"></script>-->
 </body>
 </html>

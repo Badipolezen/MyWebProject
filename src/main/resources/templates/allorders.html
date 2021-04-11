@@ -14,36 +14,7 @@
 
 <body>
 
-    <header>
-        <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark ">
-            <a class="navbar-brand text-white h4" href="/profile">Profile</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-                <ul class="navbar-nav row">
-
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/orders/all">All Orders</a>
-                    </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/orders/create">Create order</a>
-                    </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/orders/details">Oredr detail</a>
-                    </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/orders/update">Forward Order</a>
-                    </li>
-
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<th:block th:include="~{fragments/header}"/>
 
 <main class="container">
 
@@ -74,11 +45,11 @@
 <!--<th:block th:include="~{fragments/loader}"/>-->
 
 
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"-->
-<!--        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="-->
-<!--        crossorigin="anonymous"></script>-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"></script>
 
 
-<!--<script src="/js/offers.js"></script>-->
+<script src="/js/offers.js"></script>
 </body>
 </html>

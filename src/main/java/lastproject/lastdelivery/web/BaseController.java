@@ -9,7 +9,7 @@ public class BaseController {
         return session.getAttribute("username")!=null;
     }
     protected String getUsername(HttpSession session) {
-        return ((LoginUserServiceModel) session.getAttribute("user")).getUsername();
+        return ((LoginUserServiceModel) session.getAttribute("username")).getUsername();
     }
 
 }

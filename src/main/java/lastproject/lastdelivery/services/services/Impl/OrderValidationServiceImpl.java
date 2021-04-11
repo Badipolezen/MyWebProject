@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderValidationServiceImpl implements OrderValidationService {
 
+
     private final OrdersRepositories ordersRepositories;
 
     @Autowired
@@ -25,4 +26,5 @@ public class OrderValidationServiceImpl implements OrderValidationService {
     private boolean isBarcodeFree(String barcode) {
         return !ordersRepositories.existsByBarcode(barcode);
     }
+
 }

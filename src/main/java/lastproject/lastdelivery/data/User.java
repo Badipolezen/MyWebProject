@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 @Getter
@@ -17,8 +18,6 @@ import java.util.Set;
 @Table(name = "users")
 public class User extends BaseEntity implements UserDetails {
 
-    @Column
-    private String officeName;
 
     @Column(name = "username",nullable = false,unique = true)
 
@@ -36,13 +35,13 @@ public class User extends BaseEntity implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Set<Role> authorities;
 
-    public User() {
-        authorities = new HashSet<>();
-    }
-
 //    public User() {
-//        this.authorities=authorities ;
+//        authorities = new HashSet<>();
 //    }
+
+    public User() {
+        this.authorities=authorities ;
+    }
 
 
     @Column

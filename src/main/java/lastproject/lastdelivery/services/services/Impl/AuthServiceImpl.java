@@ -52,7 +52,7 @@ private final AuthValidationService authValidationService ;
     public void register(RegisterUserServiceModel model) throws Exception {
 
         if (!authValidationService.isValid(model)) {
-            throw new Exception("Invalid credential");
+            throw new Exception(" Invalid credential");
 //            return;
         } else {
 
@@ -61,10 +61,12 @@ private final AuthValidationService authValidationService ;
     if(this.userRepository.count()==0){
 
         roleService.seedRolesInDb();
-        user.setAuthorities(new HashSet<>(this.roleRepository.findAll()));
+//        user.setAuthorities(new HashSet<>(this.roleRepository.findAll()));
+
+        user.setAuthorities(new HashSet<>(Set.of(this.roleRepository.findByAuthority("ADMIN"))));
 
     }else{
-        user.setAuthorities(new HashSet<>(Set.of(this.roleRepository.findByAuthority("USER"))));
+        user.setAuthorities(new HashSet<>(Set.of(this.roleRepository.findByAuthority("GUEST"))));
     }
 
     user.setPassword(hashingService.hash(user.getPassword()));
@@ -80,6 +82,7 @@ private final AuthValidationService authValidationService ;
         if(!userRepository.existsByUsernameAndPassword(model.getUsername(), passwordHash));
             throw new Exception ("invalid User");
     }
+
 
 }
 

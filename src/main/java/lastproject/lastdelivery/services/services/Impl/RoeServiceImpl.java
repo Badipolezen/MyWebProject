@@ -23,6 +23,7 @@ public class RoeServiceImpl implements RoleService {
     public void seedRolesInDb() {
 this.roleRepository.saveAndFlush(new Role("ADMIN"));
 this.roleRepository.saveAndFlush(new Role("USER"));
+this.roleRepository.saveAndFlush(new Role("GUEST"));
 
     }
 }

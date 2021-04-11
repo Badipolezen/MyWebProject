@@ -40,6 +40,8 @@ public class AuthValidationServiceImpl implements AuthValidationService {
         return !userRepository.existsByUsername(username);
 
     }
+
+
 }
 
 

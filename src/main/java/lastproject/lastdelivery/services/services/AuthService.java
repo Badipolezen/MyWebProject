@@ -8,4 +8,5 @@ public interface AuthService extends UserDetailsService {
 
     void register(RegisterUserServiceModel model) throws Exception;
     void login(LoginServiceModel model) throws Exception;
+
 }

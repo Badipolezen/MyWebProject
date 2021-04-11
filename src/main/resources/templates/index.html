@@ -2,28 +2,51 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+<th:block th:include="~{fragments/head}"/>
+
+
+
+
+<!--<th:block th:include="~{fragments/header}"/>-->
+
+
+    <header>
+        <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark ">
+            <a class="navbar-brand text-white h4" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav row">
+<!--                    <li class="nav-item col-md-4">-->
+<!--                        <a class="nav-link text-white active h5" href="/orders/track">Track order</a>-->
+<!--                    </li>-->
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" href="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<H1 align="center"> Perfect Systems</H1>
+
 <body>
 
 
-<h2 >Hallo </h2>
+<main class="container">
 
-<!--    <div th:text="${#numbers.formatDecimal(num,1,2)}"></div>-->
 
-<div class="kok">
-
-</div>
-
-<script >
-
-    fetch("http://localhost:8080/api/trck")
-    .then(rep=>resp.json())
-    .then(resp=>console.log(resp));
-
-</script>
+</main>
 
 </body>
 </html>

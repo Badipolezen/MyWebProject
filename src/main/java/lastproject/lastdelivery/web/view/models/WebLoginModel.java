@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class WebLoginModel {
-    private String officeName;
+//    private String officeName;
     private String username;
     private String password;
 }

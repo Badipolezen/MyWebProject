@@ -1,23 +1,29 @@
 <th:block th:fragment >
     <header>
+
+        <div sec:authorize="hasAuthority('ADMIN')">
+
         <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark ">
             <a class="navbar-brand text-white h4" href="/home">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+
+            <div class="collapse navbar-collapse d-flex justify-content-end">
+
+
                 <ul class="navbar-nav row">
 
                     <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/orders/all">All Orders</a>
+                        <a class="nav-link text-white active h5" href="/users/all">All Users</a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/orders/create">Create order</a>
+                        <a class="nav-link text-white active h5" href="/orders/all">All orders</a>
                     </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/orders/details">Oredr detail</a>
-                    </li>
+<!--                    <li class="nav-item mr-2">-->
+<!--                        <a class="nav-link text-white active h5" href="/orders/details">Oredr detail</a>-->
+<!--                    </li>-->
                     <li class="nav-item mr-2">
                         <a class="nav-link text-white active h5" href="/orders/track">Track Order</a>
                     </li>
@@ -26,7 +32,75 @@
                         <a class="nav-link text-white active h5" href="/logout">Logout</a>
                     </li>
                 </ul>
-            </div>
+                </div>;
+
         </nav>
+        </div>
+
+<!--        <div sec:authorize="hasAuthority('USER')">-->
+            <div  sec:authorize="hasAuthority('USER')" >
+            <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark"/>
+                <a class="navbar-brand text-white h4" href="/home">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse d-flex justify-content-end" >
+
+
+                    <ul class="navbar-nav row">
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/orders/all">All Orders</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/orders/create">Create order</a>
+                        </li>
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/orders/track">Track Order</a>
+                        </li>
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                    </div>;
+
+            </nav>
+        </div>
+
+        <div sec:authorize="hasAuthority('GUEST')" >
+
+            <nav class="navbar bg-dark navbar-expand-lg navbar-background bg-dark ">
+                <a class="navbar-brand text-white h4" href="/home">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">&ndash;&gt;-->
+
+
+
+                    <ul class="navbar-nav row">
+
+                <li class="nav-item mr-2">
+                    <a class="nav-link text-white active h5" href="/orders/track">Track Order</a>
+                </li>
+
+                <li class="nav-item mr-2">
+                    <a class="nav-link text-white active h5" href="/logout">Logout</a>
+                </li>
+            </ul>
+
+
+        </div>
+            </nav>
+        </div>
+
+
     </header>
+
 </th:block>

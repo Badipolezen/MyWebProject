@@ -48,5 +48,33 @@ private final BCryptPasswordEncoder bCryptPasswordEncoder ;
                 .map(tr->this.modelMapper.map(tr, UsersServiceModel.class)).
                         collect(Collectors.toList());
     }
+
+    @Override
+    public User findByUsername(String username) {
+        return this.userRepository.findByUsername(username);
     }
+
+    @Override
+    public void changeRole(String username) {
+
+
+            User user=this.userRepository.findByUsername(username);
+            if(user.getAuthorities().contains(roleRepository.findByAuthority("GUEST"))) {
+
+                user.setAuthorities(new HashSet<>(Set.of(this.roleRepository.findByAuthority("USER"))));
+
+            }
+
+            if(user.getAuthorities().contains(roleRepository.findByAuthority("USER"))) {
+
+                user.setAuthorities(new HashSet<>(Set.of(this.roleRepository.findByAuthority("GUEST"))));
+
+            }
+            userRepository.saveAndFlush(user);
+        }
+
+
+    }
+
+
 

@@ -17,7 +17,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/rest","/orders/*","/templates/**","/login","/register","/favicon.ico", "/js/*", "/css/*", "/img/*")
+                .antMatchers("/index.html","/templates/**","/login","/register","/favicon.ico", "/js/*", "/css/*", "/img/*")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -27,7 +27,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .permitAll()
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/orders/all",true)
+                .defaultSuccessUrl("/home" ,true)
                  .and()
                  .logout()
                 .logoutSuccessUrl("/login?logout")

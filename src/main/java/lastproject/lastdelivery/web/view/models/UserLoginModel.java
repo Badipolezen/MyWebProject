@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserLoginModel {
 
-    private String officeName;
+//    private String officeName;
     private String username;
     private String password;
 }
