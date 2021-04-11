@@ -27,7 +27,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .permitAll()
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/" ,true)
+                .defaultSuccessUrl("/home" ,true)
                  .and()
                  .logout()
                 .logoutSuccessUrl("/login?logout")
