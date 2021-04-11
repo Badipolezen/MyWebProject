@@ -47,15 +47,7 @@
 
 <!--<th:block th:include="~{fragments/footer}"/>-->
 <!--<th:block th:include="~{fragments/loader}"/>-->
-<script>
-    let disab=document.querySelectorAll('#role > form > button')[0];
 
-    let content=disab.innerHTML;
-    console.log(content);
-
-    disab.style.display='none';
-
-</script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -64,4 +56,5 @@
 
 <script src="/js/users.js"></script>
 </body>
+<th:block th:include="~{fragments/footer}"/>
 </html>

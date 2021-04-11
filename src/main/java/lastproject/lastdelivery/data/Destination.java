@@ -3,7 +3,7 @@ package lastproject.lastdelivery.data;
 public enum Destination {
     SOFIA,
     SANDANSKI,
-    PETRCH,
+    PETRICH,
     VIDIN,
     VRATSA,
     VARNA,

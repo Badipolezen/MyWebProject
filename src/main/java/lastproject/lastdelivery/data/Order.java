@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 
 @Table(name = "orders")
@@ -17,18 +18,24 @@ import javax.persistence.*;
 public class Order extends BaseEntity {
 
     @Column( nullable = false,unique = true)
-    private String barcode;
+    @NotEmpty
 
+    private String barcode;
     @Column(nullable = false)
+    @NotEmpty
         private String destination;
+    @NotEmpty
     @Column(nullable = false)
         private String sendNumber;
+    @NotEmpty
     @Column( nullable = false)
+    @NotEmpty
         private String receiveNumber;
     @Column( nullable = false)
-
+    @NotEmpty
         private String location;
-    @Column( nullable = false,updatable = true)
+    @NotEmpty
+    @Column( nullable = false)
         private String recipientName;
 
 

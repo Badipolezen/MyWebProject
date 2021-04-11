@@ -4,7 +4,7 @@ public enum Location{
 
     SOFIA,
     SANDANSKI,
-    PETRCH,
+    PETRICH,
     VIDIN,
     VRATSA,
     VARNA,

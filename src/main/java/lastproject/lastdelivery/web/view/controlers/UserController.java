@@ -1,17 +1,14 @@
 package lastproject.lastdelivery.web.view.controlers;
 
-import lastproject.lastdelivery.data.Order;
 import lastproject.lastdelivery.data.Role;
 import lastproject.lastdelivery.data.User;
 import lastproject.lastdelivery.repositories.RoleRepository;
 import lastproject.lastdelivery.repositories.UserRepository;
 import lastproject.lastdelivery.services.services.UserService;
-import lastproject.lastdelivery.web.view.models.UserRegisterModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -70,20 +67,7 @@ public class UserController {
         return "redirect:/users/all";
     }
 
-//    @GetMapping("/profile/{username}")
-//
-//    public ModelAndView forwardOrder(@PathVariable String username , ModelAndView modelAndView){
-//        User user=this.userService.findByUsername(username);
-//        modelAndView.addObject("username",order.getBarcode());
-//        modelAndView.addObject("firstName",order.getDestination());
-//        modelAndView.addObject("LastName",order.getSendNumber());
-//        modelAndView.addObject("receiveNumber",order.getReceiveNumber());
-//        modelAndView.addObject("recipientName",order.getRecipientName());
-//        modelAndView.addObject("location",order.getLocation());
-//        modelAndView.setViewName("orders/update-order.html");
-//
-//        return modelAndView;
-//    }
+    @GetMapping("/profile")
 
     private String details() {
         return "users/profile";

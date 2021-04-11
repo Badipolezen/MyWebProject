@@ -27,8 +27,10 @@ public class AuthValidationServiceImpl implements AuthValidationService {
     @Override
     public boolean isValid(RegisterUserServiceModel user) {
         return this.isPasswordIsValid(user.getPassword(), user.getConfirmPassword())
-                && this.isUsernameFree(user.getUsername());
+                && this.isUsernameFree(user.getUsername()) && (!user.getUsername().isEmpty());
     }
+
+
 
 
     private boolean isPasswordIsValid(String password, String confirmPassword) {

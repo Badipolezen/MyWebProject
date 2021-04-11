@@ -52,7 +52,7 @@ private final AuthValidationService authValidationService ;
     public void register(RegisterUserServiceModel model) throws Exception {
 
         if (!authValidationService.isValid(model)) {
-            throw new Exception(" Invalid credential");
+            throw new Exception(" Invalid data");
 //            return;
         } else {
 
@@ -79,8 +79,10 @@ private final AuthValidationService authValidationService ;
     public void login(LoginServiceModel model) throws Exception {
         String passwordHash=this.hashingService.hash(model.getPassword());
 
-        if(!userRepository.existsByUsernameAndPassword(model.getUsername(), passwordHash));
-            throw new Exception ("invalid User");
+        if(!userRepository.existsByUsernameAndPassword(model.getUsername(), passwordHash)) {
+            throw new Exception("invalid User");
+        }
+
     }
 
 

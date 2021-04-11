@@ -1,7 +1,7 @@
 package lastproject.lastdelivery.web;
 
-import lastproject.lastdelivery.services.models.LoginServiceModel;
-//import lastproject.lastdelivery.services.models.LoginUserServiceModel;
+import lastproject.lastdelivery.web.view.models.UserLoginModel;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +10,7 @@ public class BaseController {
         return session.getAttribute("username")!=null;
     }
     protected String getUsername(HttpSession session) {
-        return ((LoginServiceModel) session.getAttribute("username")).getUsername();
+        return ((UserLoginModel) session.getAttribute("username")).getUsername();
     }
 
 }

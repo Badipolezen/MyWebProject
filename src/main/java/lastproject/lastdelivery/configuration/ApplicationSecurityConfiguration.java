@@ -17,7 +17,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/index.html","/templates/**","/login","/register","/favicon.ico", "/js/*", "/css/*", "/img/*")
+                .antMatchers("/","/templates/**","/login","/register","/favicon.ico", "/js/*", "/css/*", "/img/*")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -27,11 +27,14 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .permitAll()
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/home" ,true)
+                .defaultSuccessUrl("/" ,true)
                  .and()
                  .logout()
                 .logoutSuccessUrl("/login?logout")
-                .permitAll();
+                .permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/unauthorized");
+
 //               .deleteCookies("/login?logout");
     }
 }

@@ -7,6 +7,8 @@ import lombok.Setter;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,16 +21,20 @@ import java.util.Set;
 public class User extends BaseEntity implements UserDetails {
 
 
-    @Column(name = "username",nullable = false,unique = true)
-
+    @Column(nullable = false,unique = true)
     private String username;
 
-    @Column
+    @Column(nullable = false)
+
     private String firstName;
 
-    @Column
+    @Column(nullable = false)
+
     private String lastName;
-    @Column
+
+    @Column(nullable = false)
+
+
     private String password;
 
 
