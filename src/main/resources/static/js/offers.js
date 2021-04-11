@@ -78,7 +78,7 @@ $('#items-table').on('submit', '.buy-item-form', function (e) {
 
     e.preventDefault();
 
-    console.log(this);
+    // console.log(this);
 
     return false;
 

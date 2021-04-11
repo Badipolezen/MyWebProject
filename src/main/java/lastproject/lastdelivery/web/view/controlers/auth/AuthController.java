@@ -1,6 +1,6 @@
 package lastproject.lastdelivery.web.view.controlers.auth;
 
-import lastproject.lastdelivery.services.models.LoginUserServiceModel;
+//import lastproject.lastdelivery.services.models.LoginUserServiceModel;
 import lastproject.lastdelivery.services.models.RegisterUserServiceModel;
 import lastproject.lastdelivery.services.services.AuthService;
 import lastproject.lastdelivery.web.BaseController;
