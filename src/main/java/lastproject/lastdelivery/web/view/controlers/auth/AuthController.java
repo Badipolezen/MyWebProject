@@ -33,7 +33,7 @@ public class AuthController extends BaseController {
 
 
     @GetMapping("/login")
-    public String login(HttpSession session ) {
+    public String login(HttpSession session) {
         return "login";
     }
 //
@@ -51,19 +51,19 @@ public class AuthController extends BaseController {
 //
 //    }
 
-   @PostMapping("/login")
-   public String loginConfirm(@ModelAttribute UserLoginModel userLoginModel ) throws Exception {
+    @PostMapping("/login")
+    public String loginConfirm(@ModelAttribute UserLoginModel userLoginModel) throws Exception {
 
-       LoginServiceModel loginServiceModel = this.modelMapper.map(userLoginModel, LoginServiceModel.class);
+        LoginServiceModel loginServiceModel = this.modelMapper.map(userLoginModel, LoginServiceModel.class);
 
-       try {
-           this.authService.login(loginServiceModel);
-           return "redirect:/home";
+        try {
+            this.authService.login(loginServiceModel);
+            return "redirect:/home";
 
-       } catch (Exception ex) {
-           return "redirect:/login";
-       }
-   }
+        } catch (Exception ex) {
+            return "redirect:/login";
+        }
+    }
 
 
 //            return "redirect:/home";
@@ -71,8 +71,6 @@ public class AuthController extends BaseController {
 //            return "redirect:/users/login";
 //        }
 //    }
-
-
 
 
     @GetMapping("/register")
@@ -85,12 +83,17 @@ public class AuthController extends BaseController {
 
 
         if (!model.getPassword().equals(model.getConfirmPassword())) {
+
             return "register";
+        } else {
+            RegisterUserServiceModel serviceModel = this.modelMapper.map(model, RegisterUserServiceModel.class);
+            this.authService.register(serviceModel);
+            return "redirect:/login";
+
+
         }
-
-        RegisterUserServiceModel serviceModel=this.modelMapper.map(model, RegisterUserServiceModel.class);
-        this.authService.register(serviceModel);
-        return "redirect:/login";
-
     }
 }
+
+
+
