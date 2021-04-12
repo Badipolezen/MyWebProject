@@ -18,23 +18,23 @@ import javax.validation.constraints.NotEmpty;
 public class Order extends BaseEntity {
 
     @Column( nullable = false,unique = true)
-    @NotEmpty
+
 
     private String barcode;
     @Column(nullable = false)
-    @NotEmpty
+
         private String destination;
-    @NotEmpty
+
     @Column(nullable = false)
         private String sendNumber;
-    @NotEmpty
+
     @Column( nullable = false)
-    @NotEmpty
+
         private String receiveNumber;
     @Column( nullable = false)
-    @NotEmpty
+ 
         private String location;
-    @NotEmpty
+
     @Column( nullable = false)
         private String recipientName;
 

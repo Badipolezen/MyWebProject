@@ -35,7 +35,7 @@ public class OrderServiceImpl implements OrderService {
     public void register(OrderServiceModel model) throws Exception {
 
         if(!orderValidationService.isValidOrder(model)){
-            throw new Exception("This order exist");
+            throw new Exception("This order exist or invalid input data");
         }
         else{
             Order order = this.modelMapper.map(model, Order.class);

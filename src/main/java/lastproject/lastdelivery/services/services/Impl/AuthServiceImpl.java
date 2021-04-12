@@ -62,7 +62,7 @@ private final AuthValidationService authValidationService ;
 
         roleService.seedRolesInDb();
 //        user.setAuthorities(new HashSet<>(this.roleRepository.findAll()));
-
+//
         user.setAuthorities(new HashSet<>(Set.of(this.roleRepository.findByAuthority("ADMIN"))));
 
     }else{
@@ -79,12 +79,14 @@ private final AuthValidationService authValidationService ;
     public void login(LoginServiceModel model) throws Exception {
         String passwordHash=this.hashingService.hash(model.getPassword());
 
-        if(!userRepository.existsByUsernameAndPassword(model.getUsername(), passwordHash)) {
-            throw new Exception("invalid User");
+        if(!userRepository.existsByUsernameAndPassword(model.getUsername(), passwordHash))
+
+
+            throw new Exception("This user not exist");
         }
 
     }
 
 
-}
+
 

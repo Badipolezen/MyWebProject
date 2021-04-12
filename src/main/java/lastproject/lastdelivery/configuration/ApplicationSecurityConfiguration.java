@@ -30,10 +30,10 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .defaultSuccessUrl("/home" ,true)
                  .and()
                  .logout()
-                .logoutSuccessUrl("/login?logout")
-                .permitAll()
-                .and()
-                .exceptionHandling().accessDeniedPage("/unauthorized");
+                .logoutSuccessUrl("/")
+                .permitAll();
+//                .and()
+//                .exceptionHandling().accessDeniedPage("/unauthorized");
 
 //               .deleteCookies("/login?logout");
     }

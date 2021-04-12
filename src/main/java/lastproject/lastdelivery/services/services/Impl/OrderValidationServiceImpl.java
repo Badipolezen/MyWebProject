@@ -20,11 +20,14 @@ public class OrderValidationServiceImpl implements OrderValidationService {
 
     @Override
     public boolean isValidOrder(OrderServiceModel order) {
-        return this.isBarcodeFree(order.getBarcode());
+        return (this.isBarcodeFree(order.getBarcode()) && (!order.getDestination().isEmpty())
+        && (!order.getBarcode().isEmpty()) && (!order.getReceiveNumber().isEmpty()) && (!order.getSendNumber().isEmpty())
+        && (!order.getRecipientName().isEmpty()));
     }
 
     private boolean isBarcodeFree(String barcode) {
         return !ordersRepositories.existsByBarcode(barcode);
     }
+
 
 }
